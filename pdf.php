@@ -6,7 +6,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $conexion = mysqli_connect("localhost","root","","registro_alumnos");
 
         
-
     if ($conexion->connect_error) {
         die("Conexión fallida: " . $conexion->connect_error);
     }
