@@ -7,10 +7,10 @@ $url_base = "http://localhost/WEB/"   ?>
         <div class="card bg-dark">
             <div class=" container card-body align-items-center text-light d-flex justify-content-between ">
                 <img src="<?php echo $url_base;?>/imgs/IPNlogo.png"  width="5%">
-                <a href="https://www.facebook.com/escomipnmx"  class="text-primary text-center" ><span class="bi bi-facebook"></span> Facebook</a>
+                <a href="https://www.facebook.com/escomipnmx"  class="text-primary text-center" ><span class="bi bi-facebook"></span></a>
                 <p class="text-success text-center " ><span class="bi bi-whatsapp"></span> +525557296000</p>
-                <a href="https://maps.app.goo.gl/1cjgkvE5iiJY2tsa6" class=" text-light text-center "><span class="bi bi-geo-alt"> Ubicación</span></p>
-                <a href="https://www.instagram.com/explore/locations/118110418347552/escom-ipn-mx/" id="ig" class="text-center "><span class="bi bi-instagram"> Instagram</span></a>
+                <a href="https://maps.app.goo.gl/1cjgkvE5iiJY2tsa6" class=" text-light text-center "><span class="bi bi-geo-alt"></span></p>
+                <a href="https://www.instagram.com/explore/locations/118110418347552/escom-ipn-mx/" id="ig" class="text-center "><span class="bi bi-instagram"></span></a>
                 <img src="<?php echo $url_base;?>/imgs/logoESCOM.png" width="10%">                
             </div>
           </div>
