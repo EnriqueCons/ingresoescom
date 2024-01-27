@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>REGISTRO DE DATOS GENERALES </title>
+        <link rel="shortcut icon" href="imgs/logoESCOM.png">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="styleTwo.css">
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" >
+                <div class="container">
+                    <a href="#" class="navbar-brand"><span class="text-primary">Ingreso</span>ESCOM</a>
+                    <button class="navbar-toggler" type="button" 
+                    data-bs-toggle="collapse" 
+                    data-bs-target="#navBurguer" 
+                    aria-controls="navBurguer" 
+                    aria-expanded="false" 
+                    aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navBurguer">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a href="index.html" class="nav-link">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Registro</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="admin.html" class="nav-link">Administrador</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="pdf.html" class="nav-link">Recuperar pdf</a>
+                            </li>
+                        </ul>
+                      </div>
+                  </div>
+            </nav>
+        </header>
+        <main>
+            <div class="inicio text-center">
+                    <div class="container">
+                    <h1>Registro de datos generales</h1>
+                    <h1>Alumnos de Nuevo Ingreso</h1>
+                    <span class="text-primary"><h1>(Enero 2024)</h1></span>
+                </div>
+            </div>
+            
+                <div class="container">
+                <form action="mensaje.html" method="get" onsubmit="return validar()" autocomplete="off">
+                    <div class="card d-flex justify-content-between fw-bold ">
+                        <div class="card-body">
+                            <fieldset>
+                                <span class="text-warning text-center"><legend>Identidad</legend></span>
+                                <div class="mb-3">
+                                    <label for="NBoleta" class="form-label">No. de Boleta:</label>
+                                    <input type="text" class="form-control" name="NBoleta" id="NBoleta" required>
+                                    <p id="errorBOL"></p>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="Nombre" class="form-label">Nombre(s):</label>
+                                    <input type="text" class="form-control" name="Nombre" id="Nombre" required>
+                                    <p id="errorNAME"></p>
+                                </div>
+                                <div class="mb-3">
+                                <label for="APaterno" class="form-label">Apellido paterno:</label>
+                                <input type="text" class="form-control" name="APaterno" id="APaterno" required>
+                                <p id="errorAP"></p>
+
+                            </div>
+                            <div class="mb-3">
+                                <label for="AMaterno" class="form-label">Apellido materno:</label>
+                                <input type="text" class="form-control" name="AMaterno" id="AMaterno" required>
+                                <p id="errorAM"></p>
+                            </div>
+                            <div class="mb-3">
+                                <label for="FNacimiento" class="form-label">Fecha de nacimiento:</label>
+                                <input type="date" class="form-control" name="FNacimiento" id="FNacimiento" required>
+                                <p id="errorEDAD"></p>
+                            </div>  
+                            <div class="generos">                             
+                                <div class="form-check">
+                                    <label for="Genero">Género:</label><br>
+                                    <input class="form-check-input" type="radio" name="Genero" id="masculino"><span class="fw-normal" required>Masculino</span>                                
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="Genero" id="femenino"><span class="fw-normal">Femenino</span> 
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="Genero" id="otro"><span class="fw-normal">Prefiero no especificar</span> 
+                                </div>
+                                <p id="errorGEN"></p> 
+                            </div>
+                            <br>
+                            <div class="mb-3">
+                                <label for="CURP" class="form-label">CURP:</label>
+                                <input type="text" class="form-control" name="CURP" id="CURP" required>
+                                <p id="errorCURP"></p>
+                            </div>
+                            <div class="mb-3">
+                                <label for="discapacidad" >A fin de considerar sus necesidades y atenderlas,
+                                    requerimos saber si usted es una persona:</label><br>
+                                <select class="form-select" aria-label="Default select example" name="discapacidad" id="discapacidad" onchange="mostrarDiscapacidad()" required>
+                                    <option disabled selected value="">Selecciona una opción</option>
+                                    <option value="0" >Ninguna</option>
+                                    <option value="1">Con discapacidad auditiva</option>
+                                    <option value="2">Con discapacidad motriz usuaria de silla de ruedas</option>
+                                    <option value="3">Con discapacidad motriz usuaria de muletas</option>
+                                    <option value="4">Con discapacidad motriz usuaria de bastón</option>
+                                    <option value="5">Con discapacidad visual</option>
+                                    <option value="6">OTRO</option>
+                                </select><br><br>
+                                </div>
+                                
+                                <div id="otrodis" style="display: none;">
+                                    <label for="otrodiscapacidad">Especifica:</label>
+                                    <input type="text" class="form-control" id="otrodiscapacidad" name="otrodiscapacidad">
+                                    <br><br>
+                                </div>
+                        
+                            </fieldset>
+                        </div>
+                      </div>
+                      <br>
+                      <div class="card d-flex justify-content-between fw-bold">
+                        <div class="card-body">
+                            <fieldset>
+                                <span class="text-warning text-center"><legend>Contacto</legend></span>
+                                <div class="mb-3">
+                                    <label for="calle" class="form-label">Calle:</label>
+                                    <input type="text" class="form-control" name="calle" id="calle" required>
+                                    <p id="errorCalle"></p>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="numero" class="form-label">Número exterior:</label>
+                                    <input type="text" class="form-control" name="numero" id="numero" required>
+                                    <p id="errorNum"></p>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="colonia" class="form-label">Colonia:</label>
+                                    <input type="text" class="form-control" name="colonia" id="colonia" required>
+                                    <p id="errorCol"></p>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="cpostal" class="form-label">Código Postal:</label>
+                                    <input type="text" class="form-control" name="cpostal" id="cpostal" required>
+                                    <p id="errorCodi"></p>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="telocel" class="form-label">Teléfono o celular:</label>
+                                    <input type="text" class="form-control" name="telocel" id="telocel" required>
+                                    <p id="errorTC"></p>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="correo" class="form-label">Correo electrónico:</label>
+                                    <input type="email" class="form-control" name="correo" id="correo" required>
+                                    <p id="errorCorreo"></p>
+                                </div>
+                                <div class="mb-3">
+                                <label for="alcaldía">Alcaldía</label><br>
+                                <select class="form-select" aria-label="Default select example" name="alcaldia" id="alcaldia">
+                                    <option disabled selected value="">Selecciona tu alcaldía</option>
+                                    <option value="Álvaro Obregón">Álvaro Obregón</option>
+                                    <option value="Azcapotzalco">Azcapotzalco</option> 
+                                    <option value="Benito Juárez">Benito Juárez</option>
+                                    <option value="Coyoacán">Coyoacán</option>
+                                    <option value="Cuajimalpa de Morelos">Cuajimalpa de Morelos</option>
+                                    <option value="Cuauhtémoc">Cuauhtémoc</option>
+                                    <option value="Gustavo A. Madero">Gustavo A. Madero</option>
+                                    <option value="Iztacalco">Iztacalco</option>
+                                    <option value="Iztapalapa">Iztapalapa</option>
+                                    <option value="La Magdalena Contreras">La Magdalena Contreras</option>
+                                    <option value="Miguel Hidalgo">Miguel Hidalgo</option> 
+                                    <option value="Milpa Alta">Milpa Alta</option>
+                                    <option value="Tláhuac">Tláhuac</option>
+                                    <option value="Tlalpan">Tlalpan</option>
+                                    <option value="Venustiano Carranza">Venustiano Carranza</option>
+                                    <option value="Xochimilco">Xochimilco</option>
+                                </select><br>
+                                <p id="errorAlca"></p>
+                                </div>
+                                
+                            </fieldset>
+                        </div>
+                      </div>
+                      <br>
+                      <div class="card d-flex justify-content-between fw-bold">
+                        <div class="card-body">
+                      <fieldset>
+                        <span class="text-warning text-center"><legend>Procedencia</legend></span>
+                        <div class="mb-3">
+                        <label for="escuelas">Escuela de procedencia</label><br>
+                        <select class="form-select" aria-label="Default select example" name="EP" id="EP" onchange="mostrarNombreEscuela()" required>
+                            <option disabled selected value="">Selecciona tu escuela</option>
+                            <option value="1">CECyT #1: “Gonzalo Vázquez Vega”</option>
+                            <option value="2">CECyT #2: "Miguel Bernard"</option>
+                            <option value="3">CECyT #3: "Estanislao Ramírez Ruiz"</option>
+                            <option value="4">CECyT 4 "Lázaro Cárdenas"</option>
+                            <option value="5">CECyT #5: "Benito Juárez García"</option>
+                            <option value="6">CECyT #6: "Miguel Othón de Mendizábal"</option>
+                            <option value="7">CECyT #7: "Cuauhtémoc"</option>
+                            <option value="8">CECyT #8: "Narciso Bassols García"</option>
+                            <option value="9">CECyT #9: "Juan de Dios Bátiz"</option>
+                            <option value="10">CECyT #10: "Carlos Vallejo Márquez"</option>
+                            <option value="11">CECyT #11: "Wilfrido Massieu Pérez"</option>
+                            <option value="12">CECyT #12: "José María Morelos y Pavón"</option>
+                            <option value="13">CECyT #13: "Ricardo Flores Magón"</option>
+                            <option value="14">CECyT #14: "Luis Enrique Erro"</option>
+                            <option value="15">CECyT #15: "Diódoro Antúnez Echegaray"</option>
+                            <option value="16">CECyT #16: "Hidalgo"</option>
+                            <option value="17">CECyT #17: "León, Guanajuato" </option>
+                            <option value="18">CECyT #18: "Zacatecas"</option>
+                            <option value="19">CECyT 19 “Leona Vicario”</option>
+                            <option value="20">CET 1 “Walter Cross Buchanan”</option>
+                            <option value="21">OTRO</option>
+                        </select><br>
+                        <p id="errorEsc"></p>
+                    </div>
+                        
+                        
+                            <div id="nombreEscuelaContainer" style="display: none;">
+                                <label for="nombreEscuela">Nombre de la escuela:</label>
+                                <input type="text" class="form-control"  id="nombreEscuela" name="nombreEscuela">
+                                <br><br>
+                            
+                        </div>
+                        <div class="mb-3">
+                        <label for="estados">Entidad Federativa de procedencia</label><br>
+                        <select class="form-select" aria-label="Default select example" name="estados" id="estados">
+                            <option disabled selected value="" >Selecciona tu Entidad</option>
+                            <option value="1">Aguascalientes</option>
+                            <option value="2">Baja California</option>
+                            <option value="3">Baja California Sur</option>
+                            <option value="4">Campeche</option>
+                            <option value="5">Coahuila de Zaragoza</option>
+                            <option value="6">Colima</option>
+                            <option value="7">Chiapas</option>
+                            <option value="8">Chihuahua</option>
+                            <option value="9">Ciudad de México</option>
+                            <option value="10">Durango</option>
+                            <option value="11">Guanajuato</option>
+                            <option value="12">Guerrero</option>
+                            <option value="13">Hidalgo</option>
+                            <option value="14">Jalisco</option>
+                            <option value="15">Estado de México</option>
+                            <option value="16">Michoacán de Ocampo</option>
+                            <option value="17">Morelos</option>
+                            <option value="18">Nayarit</option>
+                            <option value="19">Nuevo León</option>
+                            <option value="20">Oaxaca</option>
+                            <option value="21">Puebla</option>
+                            <option value="22">Querétaro</option>
+                            <option value="23">Quintana Roo</option>
+                            <option value="24">San Luis Potosí</option>
+                            <option value="25">Sinaloa</option>
+                            <option value="26">Sonora</option>
+                            <option value="27">Tabasco</option>
+                            <option value="28">Tamaulipas</option>
+                            <option value="29">Tlaxcala</option>
+                            <option value="30">Veracruz de Ignacio de la Llave</option>
+                            <option value="31">Yucatán</option>
+                            <option value="32">Zacatecas</option>
+                        </select><br>
+                        <p id="errorEst"></p>
+                        </div>
+                        <div class="row g-3 align-items-center">
+                            <div class="col-auto">
+                              <label for="promedio" class="col-form-label">Promedio</label>
+                            </div>
+                            <div class="col-auto">
+                              <input type="number" class="form-control" name="Promedio" id="Promedio" step="0.01" required>
+                              <p id="errorPro"></p>
+                            </div>
+                        </div><br>
+                    </fieldset>
+                </div>
+            </div>
+                      
+
+                    <div class="buttons">
+                        <div class="container">
+                            <input type="submit" class="btn btn-primary btn-lg">
+                            <input type="reset" class="btn btn-secondary btn-lg">
+                        </div>
+                    </div>
+
+                </form>
+                </div>
+            
+        </main>
+        
+        <footer>
+            <div class="card bg-dark">
+                <div class=" container card-body align-items-center text-light d-flex justify-content-between ">
+                    <img src="imgs/IPNlogo.png"  width="5%" alt="" srcset="">
+                    <a href="https://www.facebook.com/escomipnmx"  class="text-primary text-center" ><span class="bi bi-facebook"></span> Facebook</a>
+                    <p class="text-success text-center " ><span class="bi bi-whatsapp"></span> +525557296000</p>
+                    <a href="https://maps.app.goo.gl/1cjgkvE5iiJY2tsa6" class=" text-light text-center "><span class="bi bi-geo-alt"> Ubicación</span></p>
+                    <a href="https://www.instagram.com/explore/locations/118110418347552/escom-ipn-mx/" id="ig" class="text-center "><span class="bi bi-instagram"> Instagram</span></a>
+                    <img src="imgs/logoESCOM.png" width="10%" alt="" srcset="">                
+                </div>
+              </div>
+              
+        </footer>
+       <script type="text/javascript" src="modificar.js"> </script>
+        <script type="text/javascript" src="validacion.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(242, 242, 242);
+}
+
+.inicio{
+    padding-top: 6rem;
+    padding-bottom: 2rem;
+}
+
+.buttons{
+    padding: 2rem;
+}
+
+/*ADMIN.pdf*/
+
+.sesionAdmin{
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+/*pdf.html*/
+
+.mensaje{
+    padding-top:6rem;
+}
+
+.recPdf{
+    padding-bottom: 3rem;
+}
+
+
+#ig{
+    color: rgb(190, 13, 190);
+}

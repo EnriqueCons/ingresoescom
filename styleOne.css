@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+}
+
+
+.inicio{
+    background-image: linear-gradient(0deg, 
+    rgb(0,0,0,0.7),
+    rgb(0,0,0,0.7)), url(imgs/ESCOM.jpg);
+    background-size:cover;
+    height: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 15rem 2rem;
+    
+}
+
+.requisitos{
+    background-color: rgb(242, 242, 242);
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+}
+
+.admin{
+    background-color: rgb(171, 169, 169);
+}
+
+.genpdf{
+    padding: 2rem;
+}
+
+#ig{
+    color: rgb(190, 13, 190);
+}
+
+.images{
+    background-color: rgb(242, 242, 242);
+    padding: 2rem;
+}
